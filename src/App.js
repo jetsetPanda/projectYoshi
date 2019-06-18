@@ -110,17 +110,7 @@ class App extends React.Component {
 
     return (
       <main>
-        <Navbarr score={this.state.score} length={this.state.characters.length} streak={this.state.winStreak}/>
-        <Cardgroup>
-            <div 
-            className={this.state.guessed !== null ? 
-              (this.state.guessed ? 
-                "wrapper-content" :           // true
-                "shake wrapper-content" ) :   // false
-                "wrapper-content"}            // false
-            >  
-            {charCards}
-            </div>
+        <Navbarr score={this.state.score} length={this.state.characters.length} streak={this.state.winStreak}>
             {this.state.score === this.state.characters.length ? (
               <div className="win-message">
                 <h3>You won!!!</h3>
@@ -150,7 +140,18 @@ class App extends React.Component {
                 You guessed incorrectly!
               </span>
             </p>
-
+            
+        </Navbarr>
+        <Cardgroup>
+            <div 
+            className={this.state.guessed !== null ? 
+              (this.state.guessed ? 
+                "wrapper-content" :           // true
+                "shake wrapper-content" ) :   // false
+                "wrapper-content"}            // false
+            >  
+            {charCards}
+            </div>
         </Cardgroup>
       </main>
       
