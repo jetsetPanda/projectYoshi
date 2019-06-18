@@ -1,0 +1,72 @@
+@keyframes gradientjizzy {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.wrapper {
+  margin-top: 4rem;
+  padding-top: 50px;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+  justify-content: space-around;
+  align-content: flex-start;
+  overflow: auto;
+  background: linear-gradient(-45deg, rgb(236, 116, 79), rgb(218, 58, 119), rgb(31, 162, 209), rgb(35, 206, 166));
+  background-size: 400% 400%;
+  animation: gradientjizzy 5s ease infinite;
+}
+
+.hide, .show {
+  transition: all 0.2s linear;
+}
+.hide { opacity: 0; height: 0; float: left; width: 1px; overflow: hidden; }
+.show { opacity: 1; height: auto; }
+
+.correct { 
+  color: rgb(0, 78, 151); 
+  font-family: 'Press Start 2P', cursive;
+}
+.incorrect { 
+  color: rgb(167, 0, 0);
+  font-family: 'Press Start 2P', cursive; 
+}
+
+.guesses { 
+  margin: 0; 
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

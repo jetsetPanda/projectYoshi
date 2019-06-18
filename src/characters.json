@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617182/samples/smashbros/mario_cwmztg.png", 
+        "name": "Mario",
+        "clickedornah": false
+    },
+    {
+        "id": 2,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617174/samples/smashbros/yoshi_cl6zox.png", 
+        "name": "Yoshi",
+        "clickedornah": false
+    },
+    {
+        "id": 3,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617183/samples/smashbros/daisy_jlail5.png", 
+        "name": "Princess Daisy",
+        "clickedornah": false
+    },
+    {
+        "id": 4,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617134/samples/smashbros/duckhunt_eoglk2.png", 
+        "name": "Duck Hunt Guys",
+        "clickedornah": false
+    },
+    {
+        "id": 5,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617145/samples/smashbros/fox_yhuww9.png", 
+        "name": "Fox McCloud",
+        "clickedornah": false
+    },
+    {
+        "id": 6,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617149/samples/smashbros/mewtwo_fd9etq.png", 
+        "name": "Mewtwo",
+        "clickedornah": false
+    },
+    {
+        "id": 7,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617138/samples/smashbros/pikachu_dz7xfy.png", 
+        "name": "Pikachu",
+        "clickedornah": false
+    },
+    {
+        "id": 8,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617142/samples/smashbros/puff_mymasq.png", 
+        "name": "Jigglypuff",
+        "clickedornah": false
+    },
+    {
+        "id": 9,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617168/samples/smashbros/sonic_arplhv.png", 
+        "name": "Sonic the Hedgehog",
+        "clickedornah": false
+    },
+    {
+        "id": 10,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617147/samples/smashbros/megaman_ca7kix.png", 
+        "name": "Megaman",
+        "clickedornah": false
+    },
+    {
+        "id": 11,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617184/samples/smashbros/bowser_u4qjxu.png", 
+        "name": "Bowser",
+        "clickedornah": false
+    },
+    {
+        "id": 12,
+        "image": "https://res.cloudinary.com/jetsetengine/image/upload/v1560617166/samples/smashbros/squirtle_l5lzsk.png", 
+        "name": "Squirtle",
+        "clickedornah": false
+    }
+]

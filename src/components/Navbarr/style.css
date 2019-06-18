@@ -1,0 +1,36 @@
+#navbarRainbow {
+    width: 100%;
+    height: 70px;
+    background-image: linear-gradient(rgb(126, 26, 1), rgb(139, 1, 1), rgb(177, 0, 0));
+    box-shadow: 0 14px 28px rgba(134, 2, 20, 0.25), 0 10px 10px rgba(135, 0, 22, 0.22);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.navElement {
+    display: inline-block;
+    width: 33%;
+}
+
+.textLeft {
+    text-align: left;
+    /* margin-left: 2rem; */
+}
+
+.wite {
+    color: white;
+}
+
+.floatLeft {
+    float: left;
+    margin-left: 1rem;
+}
+
+.floatRight {
+    float: right;
+}
+
+.centered {
+    text-align: center;
+}
