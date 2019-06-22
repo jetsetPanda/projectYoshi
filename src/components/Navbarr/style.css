@@ -1,16 +1,16 @@
 #navbarRainbow {
     width: 100%;
-    height: 70px;
+    height: 85px;
     background-image: linear-gradient(rgb(126, 26, 1), rgb(139, 1, 1), rgb(177, 0, 0));
     box-shadow: 0 14px 28px rgba(134, 2, 20, 0.25), 0 10px 10px rgba(135, 0, 22, 0.22);
     position: fixed;
     top: 0;
     z-index: 1;
+    overflow: auto;
 }
 
 .navElement {
     display: inline-block;
-    width: 33%;
 }
 
 .textLeft {
@@ -24,13 +24,24 @@
 
 .floatLeft {
     float: left;
-    margin-left: 1rem;
+    width: 25%;
 }
+
 
 .floatRight {
     float: right;
+    width: 25%;
+}
+
+.floatmiddle {
+    float: center;
+    margin-top: 1rem;
+    width: 50%;
 }
 
 .centered {
+    margin: auto;
+    width: 25%;
+    border: 3px solid rgb(255, 161, 161);
     text-align: center;
 }

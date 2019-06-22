@@ -9,8 +9,7 @@ const initstateobj = {
   characters,
   guessed: null,
   score: 0,
-  winStreak: 0,
-  message: "DON'T CLICK ON THE SAME CARD TWICE!"
+  winStreak: 0 
 }
 
 class App extends React.Component {
@@ -32,8 +31,7 @@ class App extends React.Component {
       characters,
       score,
       winStreak,
-      guessed,
-      message,
+      guessed
     } = this.state;
 
     let runStateUpdate = true; // run setState or nah
@@ -53,14 +51,12 @@ class App extends React.Component {
           guessed = false;        // initiate shake animations
           this.resetGame();       // reset all selected cards
           runStateUpdate = false; // don't update the state here since reset will set
-          message = "OOPS! GAME OVER!"
           break;                  // stop the loop
         
         // update score and select
         } else {
         
           score++;                // woohoo! score up
-          message = "YAAY! KEEP IT UP!"
 
           if(score > winStreak){  // check high score
             winStreak = score;    // update winning streak
@@ -96,7 +92,6 @@ class App extends React.Component {
       characters,
       score: 0,
       guessed: false,
-      message: "DON'T CLICK ON THE SAME CARD TWICE!"
     });
 
     setTimeout(() => {
@@ -115,15 +110,44 @@ class App extends React.Component {
 
     return (
       <main>
-        <Navbarr score={this.state.score} message={this.state.message} streak={this.state.winStreak}>
-         
+        <Navbarr score={this.state.score} length={this.state.characters.length} streak={this.state.winStreak}>
+            {this.state.score === this.state.characters.length ? (
+              <div className="win-message">
+                <h3>You won!!!</h3>
+                <button 
+                  className="restartGame" 
+                  onClick={this.resetGame}>
+                    Restart the Game
+                </button>  
+              </div>) : ""} 
+            <p>
+              <span 
+                className={this.state.guessed !== null ?
+                (this.state.guessed ? 
+                  "guesses correct show" :  // true
+                  "guesses hide" ) :        // false
+                  "guesses hide"}           // false
+              >  
+                    You guessed correctly!
+              </span>
+              <span 
+                className={this.state.guessed !== null ? 
+                  (this.state.guessed ?
+                    "guesses hide" :              // true
+                    "guesses incorrect show" ) :  // false
+                    "guesses hide"}               // false
+              >
+                You guessed incorrectly!
+              </span>
+            </p>
+            
         </Navbarr>
         <Cardgroup>
             <div 
             className={this.state.guessed !== null ? 
               (this.state.guessed ? 
                 "wrapper-content" :           // true
-                "errorbump wrapper-content" ) :   // false
+                "shake wrapper-content" ) :   // false
                 "wrapper-content"}            // false
             >  
             {charCards}
