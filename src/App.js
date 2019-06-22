@@ -53,7 +53,7 @@ class App extends React.Component {
           guessed = false;        // initiate shake animations
           this.resetGame();       // reset all selected cards
           runStateUpdate = false; // don't update the state here since reset will set
-          message = "OOPS! GAME OVER!"
+          this.message = "OOPS! GAME OVER!"
           break;                  // stop the loop
         
         // update score and select

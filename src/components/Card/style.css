@@ -19,7 +19,7 @@
   
 }
 
-.characters {
+/* .characters {
   height: 230px;
   border-radius: 5px;
   opacity: 0.8;
@@ -30,7 +30,7 @@
   transform: scale(2);
   box-shadow: 0 14px 28px rgba(43, 6, 6, 0.25), 0 10px 10px rgba(32, 12, 12, 0.22);
   transition: 0.1s;
-}
+} */
 
 .card:active {
   margin: 2px 0 23px 0;
