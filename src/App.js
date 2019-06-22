@@ -9,7 +9,8 @@ const initstateobj = {
   characters,
   guessed: null,
   score: 0,
-  winStreak: 0 
+  winStreak: 0,
+  message: "DON'T CLICK ON THE SAME CARD TWICE!"
 }
 
 class App extends React.Component {
@@ -119,28 +120,8 @@ class App extends React.Component {
                   onClick={this.resetGame}>
                     Restart the Game
                 </button>  
-              </div>) : ""} 
-            <p>
-              <span 
-                className={this.state.guessed !== null ?
-                (this.state.guessed ? 
-                  "guesses correct show" :  // true
-                  "guesses hide" ) :        // false
-                  "guesses hide"}           // false
-              >  
-                    You guessed correctly!
-              </span>
-              <span 
-                className={this.state.guessed !== null ? 
-                  (this.state.guessed ?
-                    "guesses hide" :              // true
-                    "guesses incorrect show" ) :  // false
-                    "guesses hide"}               // false
-              >
-                You guessed incorrectly!
-              </span>
-            </p>
-            
+              </div>) : ""}
+         
         </Navbarr>
         <Cardgroup>
             <div 
