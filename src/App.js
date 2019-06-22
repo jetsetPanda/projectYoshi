@@ -10,7 +10,7 @@ const initstateobj = {
   guessed: null,
   score: 0,
   winStreak: 0,
-  message: "DON'T CLICK ON THE SAME CARD TWICE!"
+  message: "RULES: DON'T CLICK ON THE SAME CARD!"
 }
 
 class App extends React.Component {
@@ -33,10 +33,9 @@ class App extends React.Component {
       score,
       winStreak,
       guessed,
-      message,
     } = this.state;
 
-    let runStateUpdate = true; // run setState or nah
+    let stateWillUpdate = true; // run setState or nah
 
     // shuffle order of character cards
     characters = this.shuffleCards();
@@ -46,21 +45,24 @@ class App extends React.Component {
       // find the clicked item in the array
       if (characters[i].id === id) {
         
-        // oops... player already selected this card. Run GameOvar sequence:
+        // oops... player already selected this card! Run GameOvar sequence:
         if(characters[i].selected){
           
           score = 0;              // reset score
-          guessed = false;        // initiate shake animations
-          this.resetGame();       // reset all selected cards
-          runStateUpdate = false; // don't update the state here since reset will set
-          this.message = "OOPS! GAME OVER!"
+          guessed = false;        // trigger to errorbump animation (css class)
+          this.resetGame();       // reset all selected cards as unselected
+          stateWillUpdate = false; // don't update the state here since reset will set
+          this.setState({ message : ">> GAME OVER! >> SCORE RESET TO ZERO..."});
+          setTimeout(() => {
+            this.setState({ message: "NEW GAME: Dont click on the same card!"});
+          }, 1500)
           break;                  // stop the loop
         
         // update score and select
         } else {
         
           score++;                // woohoo! score up
-          message = "YAAY! KEEP IT UP!"
+          this.setState({ message : "YAAY! KEEP IT UP! "});
 
           if(score > winStreak){  // check high score
             winStreak = score;    // update winning streak
@@ -74,7 +76,7 @@ class App extends React.Component {
       }
     }
     
-    if(runStateUpdate){
+    if(stateWillUpdate){
       console.log("state updated");
       this.setState({ characters, score, winStreak, guessed });
       setTimeout(() => {
@@ -89,19 +91,20 @@ class App extends React.Component {
     console.log("state resets");
     
     for (var i in characters) {
-      characters[i].selected = false;
+      characters[i].selected = false; // resets cards as unselected
     }
 
     this.setState({ 
       characters,
-      score: 0,
-      guessed: false,
-      message: "DON'T CLICK ON THE SAME CARD TWICE!"
+      guessed: false
     });
 
     setTimeout(() => {
-      this.setState({ guessed: null });
-    }, 3500)
+      this.setState({ 
+        guessed: null,
+        score: 0  
+      });
+    }, 1500)
     
   }
 
@@ -115,16 +118,14 @@ class App extends React.Component {
 
     return (
       <main>
-        <Navbarr score={this.state.score} message={this.state.message} streak={this.state.winStreak}>
-         
-        </Navbarr>
+        <Navbarr score={this.state.score} message={this.state.message} streak={this.state.winStreak}/>
         <Cardgroup>
             <div 
             className={this.state.guessed !== null ? 
               (this.state.guessed ? 
-                "wrapper-content" :           // true
+                "wrapper-content" :           // true - class remains
                 "errorbump wrapper-content" ) :   // false
-                "wrapper-content"}            // false
+                "wrapper-content"}            // false - null status (no events)
             >  
             {charCards}
             </div>

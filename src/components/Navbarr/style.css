@@ -1,12 +1,20 @@
 #navbarRainbow {
     width: 100%;
     height: 85px;
-    background-image: linear-gradient(rgb(126, 26, 1), rgb(139, 1, 1), rgb(177, 0, 0));
+    background-color: #3f0d12;
+    background-image: linear-gradient(140deg, #3f0d12 0%, #a71d31 74%);
+    /* background-image: linear-gradient(rgb(126, 26, 1), rgb(139, 1, 1), rgb(177, 0, 0));
+     */
     box-shadow: 0 14px 28px rgba(134, 2, 20, 0.25), 0 10px 10px rgba(135, 0, 22, 0.22);
     position: fixed;
     top: 0;
     z-index: 1;
     overflow: auto;
+}
+
+
+.shadowed {
+    text-shadow: 1px 1px 2px rgba(55, 55, 55, 0.117);
 }
 
 .navElement {
@@ -15,6 +23,7 @@
 
 .textLeft {
     text-align: left;
+    margin-left: 1rem;
     /* margin-left: 2rem; */
 }
 
@@ -30,6 +39,7 @@
 
 .floatRight {
     float: right;
+    margin-top: 1rem;
     width: 25%;
 }
 
@@ -37,11 +47,23 @@
     float: center;
     margin-top: 1rem;
     width: 50%;
+    border-radius: 25px;
+    background: rgb(18, 27, 5);
+    /* padding: 5px;  */
 }
 
-.centered {
-    margin: auto;
-    width: 25%;
-    border: 3px solid rgb(255, 161, 161);
-    text-align: center;
+
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+  }
+
+.jetsetLogo {
+    background: -webkit-linear-gradient(315deg, #bfe299 0%, #66b5f6 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 1rem;
 }

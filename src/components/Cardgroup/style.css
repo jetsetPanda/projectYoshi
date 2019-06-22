@@ -1,15 +1,3 @@
-@keyframes gradientjizzy {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
 .wrapper {
   margin-top: 4rem;
   padding-top: 50px;
@@ -20,9 +8,21 @@
   justify-content: space-around;
   align-content: flex-start;
   overflow: auto;
-  background: linear-gradient(-45deg, rgb(236, 116, 79), rgb(218, 58, 119), rgb(31, 162, 209), rgb(35, 206, 166));
+  background: linear-gradient(-45deg, rgb(236, 116, 79), rgb(218, 58, 119), rgb(26, 116, 154), rgb(115, 229, 8));
   background-size: 400% 400%;
   animation: gradientjizzy 5s ease infinite;
+}
+
+@keyframes gradientjizzy {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
 }
 
 .hide, .show {
@@ -54,8 +54,8 @@
 }
 
 @keyframes errorbump {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
+  10%, 95% {
+    transform: translate3d(-2px, 0, 0);
   }
   
   20%, 80% {
